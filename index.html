@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/htmx.org@1.8.6"></script>
+    <title><%= it.title %></title>
+</head>
+<style>
+body{
+  font-size:3rem;
+  font-family: 'Inter', sans-serif;
+  line-height:80px;
+  }
+
+  :root{
+  --light-color: #93BAE833;
+  --mid-color:#93BAE866;
+  --dark-color:#93BAE899;
+
+  }
+.alternate-arguments{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-row-gap: 48px;
+    grid-column-gap: 45px;
+    max-width: 90%;
+    margin: 0 auto;
+    justify-items:center;
+    position:absolute;
+    top:-10000px;
+    transition: 2s ease-in;
+    
+   
+}
+
+.alternate-arguments.show{
+position:relative;
+top:1rem;
+
+}
+
+
+.alternate-argument-1{
+grid-area: 1 / 1 / 2 / 2;
+background-color: var(--light-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+.alternate-argument-2{
+grid-area: 2 / 1 / 3 / 2;
+background-color: var(--light-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+.alternate-argument-3{
+grid-area: 3 / 1 / 4 / 2;
+background-color: var(--light-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+.alternate-argument-4{
+grid-area: 1 / 2 / 2 / 3;
+background-color: var(--mid-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+.alternate-argument-5{
+grid-area: 2 / 2 / 3 / 3;
+background-color: var(--mid-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+
+.alternate-argument-6{
+grid-area: 2 / 3 / 3 / 4;
+background-color: var(--mid-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+
+.alternate-argument-7 {
+ grid-area: 1 / 3 / 2 / 4; 
+background-color: var(--dark-color);
+border-radius: 25px;
+padding:2.5rem;
+ }
+ 
+.alternate-argument-8 { 
+grid-area: 3 / 2 / 5 / 3;
+background-color: var(--dark-color);
+border-radius: 25px;
+padding:2.5rem;
+ }
+
+.alternate-argument-9 { 
+grid-area: 3 / 3 / 4 / 4; 
+background-color: var(--dark-color);
+border-radius: 25px;
+padding:2.5rem;
+}
+
+hr{
+background-color:black;
+}
+
+.consensus-argument{
+    max-width: 80%;
+    margin: 0 auto;
+}
+input[type="checkbox"]  {
+    opacity:1;
+    position:absolute;
+}
+
+input[type="checkbox"]:checked + label  {
+   background:blue;
+}
+
+
+label{
+    
+}
+
+</style>
+<body>
+<main>
+
+<section class="alternate-arguments hidden">
+<div class="alternate-argument-1">
+<p>
+Bij speciale omstandigheden zijn wij sterk voorstander van het inzetten van proctoring-software bij high stake toetsing.</p>
+</div>
+
+<div class="alternate-argument-2">
+<p>In geval van bijzondere omstandigheden zijn wij ervan overtuigd dat het inzetten van proctoring-software bij high stake toetsing gerechtvaardigd is.</p>
+</div>
+
+<div class="alternate-argument-3">
+<p>Bij uitzonderlijke omstandigheden staan wij achter het gebruik van proctoringsoftware bij high stake toetsing.</p>
+</div>
+
+<div class="alternate-argument-4">
+<p>Bij bijzondere omstandigheden zijn wij van mening dat het beperkt inzetten van proctoringsoftware bij high stake toetsing alsnog gerechtvaardigd is</p>
+</div>
+
+<div class="alternate-argument-5">
+<p>In geval van speciale omstandigheden zijn wij voorstander van het gebruik van proctoring-software bij high stake toetsing, mits er passende waarborgen zijn ingebouwd.</p>
+</div>
+
+<div class="alternate-argument-6">
+<p>Bij uitzonderlijke omstandigheden kunnen we het inzetten van proctoringsoftware bij high stake toetsing accepteren, mits er geen alternatieve opties beschikbaar zijn.</p>
+</div>
+<div class="alternate-argument-7">
+<p>Onder speciale omstandigheden zijn wij tegen het inzetten van proctoringsoftware bij high stake toetsing.</p>
+</div>
+<div class="alternate-argument-8">
+<p>Bij bijzondere omstandigheden zijn wij van mening dat het inzetten van proctoringsoftware bij high stake toetsing niet gerechtvaardigd is</p>
+</div>
+<div class="alternate-argument-9">
+<p>In geval van uitzonderlijke omstandigheden zijn wij tegen het gebruik van proctoringsoftware bij high stake toetsing.</p>
+</div>
+</section>
+<hr>
+
+
+<div class="consensus-argument">
+<input type="checkbox"><label class=".clickable-sentence">Wij hebben met belangstelling kennisgenomen van de uitspraak van het college.</label>
+<input type="checkbox"><label class=".clickable-sentence"> Bij bijzondere omstandigheden zijn wij van mening dat het inzetten van proctoringsoftware bij high stake toetsing alsnog te gerechtvaardigd is.</label>
+<input type="checkbox"> <label class=".clickable-sentence">Gedurende de coronaperiode hebben wij gebruik gemaakt van proctoringsoftware. </label> 
+<input type="checkbox"><label class=".clickable-sentence">Deze software hebben wij zorgvuldig in lijn met ons beleid op integrale veiligheid ingericht.</label>
+<input type="checkbox"><label class=".clickable-sentence"> Ons zijn geen problemen of klachten bekend zoals in deze zaak voorlagen.</label>
+<input type="checkbox"><label class=".clickable-sentence"> In de toekomst zullen wij in vooraf bepaalde specifieke gevallen gebruik blijven maken van proctoringsoftware waarbij wij altijd zeer zorgvuldig zullen handelen</label>
+
+</div>
+<% /* plek voor alternatieve argumenten */ %>
+
+</main>
+</body>
+<script>
+const clickSentences = document.querySelectorAll(('label'));
+const altArguments = document.querySelector('.alternate-arguments');
+
+clickSentences.forEach(sentence => {
+    sentence.addEventListener('click', () => {
+        altArguments.classList.toggle('show');
+
+    });
+});
+</script>
+</html>
+
